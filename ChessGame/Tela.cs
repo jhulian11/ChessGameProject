@@ -20,6 +20,8 @@ namespace ChessGame
 
                     else 
                         Console.Write(tab.PecaPub(i,j) + " ");
+
+
                 }
 
                 Console.WriteLine();
