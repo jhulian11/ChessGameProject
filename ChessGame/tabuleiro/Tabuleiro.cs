@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tabuleiro
 {
-    public class Tabuleiro
+    internal class Tabuleiro
     {
         public int Linhas { get; set; }
         public int Colunas { get; set; }
@@ -17,6 +17,11 @@ namespace tabuleiro
             Linhas = linhas;
             Colunas = colunas;
             pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca PecaPub(int linha, int coluna)
+        {
+            return pecas[linha,coluna];
         }
     }
 }
