@@ -19,12 +19,22 @@ namespace ChessGame
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
             Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando Jogada: " + partida.JogadorAtual);
-            if (partida.Xeque)
+            if (!partida.Terminada)
             {
-                Console.WriteLine();
-                Console.WriteLine("Xeque!");
+                Console.WriteLine("Aguardando Jogada: " + partida.JogadorAtual);
+                if (partida.Xeque)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Xeque!");
+                }
             }
+
+            else
+            {
+                Console.WriteLine("XEQUEMATE! ");
+                Console.WriteLine("Vencedor: "+ partida.JogadorAtual);
+            }
+            
         }
 
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
