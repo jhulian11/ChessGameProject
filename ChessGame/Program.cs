@@ -30,12 +30,19 @@ try
             Console.WriteLine();
             Console.Write("Destino: ");
             Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
-            partida.ValidarPosicaoDeDestino(origem,destino);
+            partida.ValidarPosicaoDeDestino(origem, destino);
 
             partida.RealizaJogada(origem, destino);
         }
         catch (TabuleiroException e)
         {
+            Console.WriteLine(e.Message);
+            Console.ReadLine();
+
+        }
+        catch (SystemException e)
+        {
+            Console.WriteLine("Algum Erro occorreu!");
             Console.WriteLine(e.Message);
             Console.ReadLine();
 
